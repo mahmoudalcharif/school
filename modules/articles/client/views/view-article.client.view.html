@@ -18,5 +18,15 @@
       <span ng-bind="article.user.displayName"></span>
     </em>
   </small>
-  <p class="lead" ng-bind="article.content"></p>
+  <br>
+  <br>
+   Assignment Title:
+	  <h4 class="list-group-item-heading" ng-bind="article.title"></h4>
+<br>
+   Assignment Details:
+	  <h4 class="list-group-item-heading" ng-bind="article.description"></h4>
+	  
+<br>
+	Due Date:;
+	  <h4 class="list-group-item-heading" ng-bind="article.duedate | date:'mediumDate'"></h4>
 </section>

@@ -1,6 +1,6 @@
 <section ng-controller="ArticlesController" ng-init="find()">
   <div class="page-header">
-    <h1>Articles</h1>
+    <h1>Assignments</h1>
   </div>
   <div class="list-group">
     <a ng-repeat="article in articles" ui-sref="articles.view({articleId: article._id})" class="list-group-item">
@@ -10,11 +10,20 @@
         by
         <span ng-bind="article.user.displayName"></span>
       </small>
-      <h4 class="list-group-item-heading" ng-bind="article.title"></h4>
-      <p class="list-group-item-text" ng-bind="article.content"></p>
+	  <br>
+	  <br>
+      Assignment Title:
+	  <h4 class="list-group-item-heading" ng-bind="article.title"></h4>
+	  
+	  Assignment Details:
+	  <h4 class="list-group-item-heading" ng-bind="article.description"></h4>
+	  Due Date:;
+	  <h4 class="list-group-item-heading" ng-bind="article.duedate | date:'mediumDate'"></h4>
+
+     
     </a>
   </div>
   <div class="alert alert-warning text-center" ng-if="articles.$resolved && !articles.length">
-    No articles yet, why don't you <a ui-sref="articles.create">create one</a>?
+    No assignments yet, why don't you <a ui-sref="articles.create">create assignment</a>?
   </div>
 </section>

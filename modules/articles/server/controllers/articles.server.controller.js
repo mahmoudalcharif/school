@@ -40,7 +40,8 @@ exports.update = function (req, res) {
   var article = req.article;
 
   article.title = req.body.title;
-  article.content = req.body.content;
+  article.description = req.body.description;
+  article.duedate = req.body.duedate;
 
   article.save(function (err) {
     if (err) {

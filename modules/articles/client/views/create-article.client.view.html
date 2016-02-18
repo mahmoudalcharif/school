@@ -1,21 +1,34 @@
 <section ng-controller="ArticlesController">
   <div class="page-header">
-    <h1>New Article</h1>
+    <h1>New Assignment</h1>
   </div>
   <div class="col-md-12">
     <form name="articleForm" class="form-horizontal" ng-submit="create(articleForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
-          <label for="title">Title</label>
+          <label for="title">Assignment Title</label>
           <input name="title" type="text" ng-model="title" id="title" class="form-control" placeholder="Title" required>
           <div ng-messages="articleForm.title.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Article title is required.</p>
           </div>
+		
+          <label for="title">Assignment Description</label>
+          <textarea name="description" type="text" ng-model="description" id="description" class="form-control" cols="10" rows="5"  placeholder="description" required>
+          </textarea>
+		  <div ng-messages="articleForm.title.$error" role="alert">
+          <p class="help-block error-text" ng-message="required">Assignment Description is required.</p>
+          </div>
+		
+          <label for="title">Due Date</label>
+          <input name="duedate" style="width: 200px;" type="date" ng-model="duedate" id="duedate" class="form-control" placeholder="duedate" required>
+       
+		  <div ng-messages="articleForm.title.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">You must specify an assignment due date.</p>
+          </div>
+		
+     
         </div>
-        <div class="form-group">
-          <label for="content">Content</label>
-          <textarea name="content" ng-model="content" id="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
-        </div>
+    
         <div class="form-group">
           <input type="submit" class="btn btn-default">
         </div>
